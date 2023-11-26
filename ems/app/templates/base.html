@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}EMS{% endblock title %}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+        <!-- font-awesome-link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <!-- css-link -->
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    </head>
+    <body>
+    {% block content %}
+        <header class="header">
+            <a href="#" class="logo"><span>e</span>vento</a>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#service">Service</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#price">Price</a>
+                <a href="#review">Review</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div id="menu-bars" class="fas fa-bars"></div>
+        </header>
+        <!-- under body -->
+        <section class="home" id="home">
+            <div class="content">
+                <h3>Its time to celebrate! the best <span> event organizers</span>
+                </h3>
+                <a href="#footer" class="btn">contact us</a>
+            </div>
+            <div class="swiper home-slider">
+                <div class="swiper-wrapper">
+                    {% for slide in slides %}
+                        <div class="swiper-slide"><img src="{{ slide.image.url }}" alt="slides"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- services section started -->
+
+        <section class="service" id="service">
+            <h1 class="heading"> our <span>services</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>venue selection</h3>
+                    <p>With our Venue Selection Services, you can easily find
+                        the ideal location. We provide a wide range of options
+                        to help you realise your event's vision. We simplify the
+                        venue selection process so that you can easily research,
+                        evaluate, and reserve locations, making all of your
+                        event planning requirements hassle-free.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>invitation card</h3>
+                    <p>With the help of our Invitation Cards section, create a
+                        memorable impression right from the first invite by
+                        artfully fusing the elegance of your event with the
+                        splendour of your selected location. We create an
+                        inviting atmosphere where your venue choice harmonises
+                        with the tone established by your personalised
+                        invitation cards, so your event leaves a lasting
+                        impression. We don't just plan events."</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-music"></i>
+                    <h3>entertainment</h3>
+                    <p>Enhance the thrill of your occasion with our
+                        Entertainment section, which provides a wide variety of
+                        performances and artists to turn the location of your
+                        choice into a stage for lifelong memories. We expertly
+                        blend venue selection with engaging entertainment to
+                        make your event a fulfilling and unforgettable occasion
+                        for both you and your guests.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-utensils"></i>
+                    <h3>food and drinks</h3>
+                    <p>With our Food and Drinks section, you can elevate your
+                        event by turning locations into culinary wonderlands and
+                        creating unique dining experiences. At Evento, we
+                        expertly combine catering choices with venue selection
+                        to make sure your event is more than just a
+                        place—rather, it's a sensory feast that your guests will
+                        remember for years to come.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-photo-video"></i>
+                    <h3>photos & videos</h3>
+                    <p>Take lifelong memories with us in our Photos and Videos
+                        section, where your preferred location serves as the
+                        backdrop for your remarkable tale. At Evento, we offer
+                        you a comprehensive solution to ensure that your event
+                        is not only gorgeous but also beautifully remembered. We
+                        accomplish this by skillfully fusing photography,
+                        videography, and venue selection.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-birthday-cake"></i>
+                    <h3>custom food</h3>
+                    <p>With our Custom Food Section, where each dish is a
+                        reflection of your own vision, you can elevate the
+                        culinary experience at your event. At Evento, We
+                        Effortlessly Combine Personalised Cuisine With Venue
+                        Selection To Make Your Event A Truly Outstanding Feast
+                        for the Senses.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-paypal"></i>
+                    <h3>Secure Payment</h3>
+                    <p>Your mental well-being is our top priority at Evento.
+                        With the peace of mind that comes with knowing your
+                        financial transactions are secure, you can book your
+                        ideal venue with confidence. In our Secure Payment
+                        section, we make use of cutting-edge encryption
+                        technology to ensure that your payment details are
+                        protected, allowing you to concentrate on event planning
+                        with confidence and security.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-phone"></i>
+                    <h3>Customer Support</h3>
+                    <p>We have a committed Customer Support team available to
+                        help you at every turn. Do you require help or have a
+                        question? We're only a call or click away, so you can
+                        plan an event with ease and without any stress. We are
+                        committed to providing outstanding service. Our Customer
+                        Support department is dedicated to answering your
+                        questions, fixing problems, and offering knowledgeable
+                        guidance so that you have the assistance required to
+                        plan a perfect event.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--about section started -->
+        <section class="about" id="about">
+            <h1 class="heading"><span>about</span> us </h1>
+            <div class="row">
+                <div class="image">
+                    <img src="{% static 'images/about1.jpeg' %}" alt="about">
+                </div>
+                <div class="content">
+                    <h3>From Vision to Reality, We Make Events Exceptional</h3>
+                    <p>Welcome to Evento, the place where ideas for events come
+                        to life. Our goal is to make event planning a simple
+                        process, and our passion is creating moments that will
+                        never be forgotten. </p>
+                    <p>We have a wide range of locations,
+                        professional services, and committed support to make
+                        sure your vision is realised. At Evento, we create
+                        memories With years
+                        of experience in the field.</p>
+                    <a href="#" class="btn">contact us</a>
+                </div>
+            </div>
+        </section>
+        <!-- gallery starting -->
+
+        <section class="gallery" id="gallery">
+            <h1 class="heading">our <span>gallery</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="{% static 'images/g-1.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-2.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-3.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-4.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-5.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-6.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-7.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-8.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-9.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-10.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-11.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'images/g-12.jpeg' %}" alt="g1">
+                    <h3 class="title">photos and events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- price starting -->
+
+        <section class="price" id="price">
+            <h1 class="heading">our <span>price</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <h3 class="title">for birthdays</h3>
+                    <h3 class="amount">$250.99</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>full services</li>
+                        <li><i class="fas fa-check"></i>decorations</li>
+                        <li><i class="fas fa-check"></i>music & photos</li>
+                        <li><i class="fas fa-check"></i>food & drinks</li>
+                        <li><i class="fas fa-check"></i>invitation cards</li>
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+
+                <div class="box">
+                    <h3 class="title">for weddings</h3>
+                    <h3 class="amount">$450.99</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>full services</li>
+                        <li><i class="fas fa-check"></i>decorations</li>
+                        <li><i class="fas fa-check"></i>music & photos</li>
+                        <li><i class="fas fa-check"></i>food & drinks</li>
+                        <li><i class="fas fa-check"></i>invitation cards</li>
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+
+                <div class="box">
+                    <h3 class="title">for concerts</h3>
+                    <h3 class="amount">$650.99</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>full services</li>
+                        <li><i class="fas fa-check"></i>decorations</li>
+                        <li><i class="fas fa-check"></i>music & photos</li>
+                        <li><i class="fas fa-check"></i>food & drinks</li>
+                        <li><i class="fas fa-check"></i>invitation cards</li>
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+                <div class="box">
+                    <h3 class="title">for others</h3>
+                    <h3 class="amount">$850.99</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>full services</li>
+                        <li><i class="fas fa-check"></i>decorations</li>
+                        <li><i class="fas fa-check"></i>music & photos</li>
+                        <li><i class="fas fa-check"></i>food & drinks</li>
+                        <li><i class="fas fa-check"></i>invitation cards</li>
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- review section starts -->
+        <section class="review" id="review">
+            <h1 class="heading">client's <span>review</span></h1>
+            <div class="review-slider swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="{% static 'images/pic-1.jpeg' %}" alt="pic1">
+                            <div class="user-info">
+                                <h3>Ms. Dua Lipa</h3>
+                                <span>happy clients</span>
+                            </div>
+                        </div>
+                        <p>Exceptional event coordination! Our guests were impressed with the flawless execution and creative touches that made our celebration truly unforgettable.</p>
+                    </div>
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="{% static 'images/pic-2.jpeg' %}" alt="pic1">
+                            <div class="user-info">
+                                <h3>Ms. Taylor Swift</h3>
+                                <span>happy clients</span>
+                            </div>
+                        </div>
+                        <p>Kudos to the team for turning our vision into reality! The attention to detail and professionalism exceeded our expectations, making our corporate event.</p>
+                    </div>
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="{% static 'images/pic-3.jpeg' %}" alt="pic1">
+                            <div class="user-info">
+                                <h3>Ms. Selena Gomez</h3>
+                                <span>happy clients</span>
+                            </div>
+                        </div>
+                        <p>Outstanding event planning! From start to finish, the team demonstrated flexibility, creativity, and precision, ensuring our special day was everything we dreamed of.</p>
+                    </div>
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="{% static 'images/pic-4.jpeg' %}" alt="pic1">
+                            <div class="user-info">
+                                <h3>Ms. kendall jenner</h3>
+                                <span>happy clients</span>
+                            </div>
+                        </div>
+                        <p>Impeccable organization and a keen eye for aesthetics! The event flowed seamlessly, and the unique touches added a touch of magic that left our guests raving.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- contact us starts -->
+        <section class="contact" id="contact">
+            <h1 class="heading"><span>contact</span> us</h1>
+            <form method="post" action="">{% csrf_token %}
+                <div class="inputBox">
+                    <input type="text" placeholder="name" id="name" name="name">
+                    <input type="email" placeholder="email" id="email" name="email">
+                </div>
+                <div class="inputBox">
+                    <input type="number" placeholder="number" id="number" name="number">
+                    <input type="text" placeholder="subject" id="subject" name="subject">
+                </div>
+                <textarea name="message" placeholder="your message" cols="30" rows="10" id="message"></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+        </section>
+
+        <!-- footer section starts -->
+        <section class="footer" id="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>branches</h3>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> mumbai</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Delhi</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> California</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Washington</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> georgia</a>
+                </div>
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="#"><i class="fas fa-arrow-right"></i> home</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i> service</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i> about</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i> gallery</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i> price</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i> review</a>
+                    <a href="#"><i class="fas fa-arrow-right"></i> contact</a>
+                </div>
+                <div class="box">
+                    <h3>contact info</h3>
+                    <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
+                    <a href="#"><i class="fas fa-phone"></i> +111-222-3333</a>
+                    <a href="#"><i class="fas fa-envelope"></i> pratibha2001@gmail.com</a>
+                    <a href="#"><i class="fas fa-envelope"></i> pachoury2000@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> mumbai, india - 400104</a>
+                </div>
+                <div class="box">
+                    <h3>follow us</h3>
+                    <a href="#"><i class="fa-brands fa-facebook"></i> facebook</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> twitter</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> instagram</a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin</a>
+                </div>
+            </div>
+            <div class="credit"> created by <span>Ms. Pratibha Pachoury, Mr. Harsh Tomar, Mr. Naveen </span>  all rights reserved</div>
+        </section>
+    {% endblock content %}
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="{% static 'script.js' %}"></script>
+    </body>
+</html>
