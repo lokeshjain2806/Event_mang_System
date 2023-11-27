@@ -177,8 +177,9 @@
         <section class="gallery" id="gallery">
             <h1 class="heading">our <span>gallery</span></h1>
             <div class="box-container">
+                {% for gallary in Galleries %}
                 <div class="box">
-                    <img src="{% static 'images/g-1.jpeg' %}" alt="g1">
+                    <img src="{{ gallary.image.url }}" alt="g1">
                     <h3 class="title">photos and events</h3>
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
@@ -186,116 +187,7 @@
                         <a href="#" class="fas fa-eye"></a>
                     </div>
                 </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-2.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-3.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-4.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-5.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-6.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-7.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-8.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-9.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-10.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-11.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="{% static 'images/g-12.jpeg' %}" alt="g1">
-                    <h3 class="title">photos and events</h3>
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-share"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
 
@@ -362,50 +254,19 @@
             <h1 class="heading">client's <span>review</span></h1>
             <div class="review-slider swiper-container">
                 <div class="swiper-wrapper">
+                {% for review in reviews %}
                     <div class="swiper-slide box">
                         <i class="fas fa-quote-right"></i>
                         <div class="user">
-                            <img src="{% static 'images/pic-1.jpeg' %}" alt="pic1">
+                            <img src="{{ review.image.url }}" alt="pic1">
                             <div class="user-info">
-                                <h3>Ms. Dua Lipa</h3>
-                                <span>happy clients</span>
+                                <h3>{{ review.name }}</h3>
+                                <span>{{ review.rating }}</span>
                             </div>
                         </div>
-                        <p>Exceptional event coordination! Our guests were impressed with the flawless execution and creative touches that made our celebration truly unforgettable.</p>
+                        <p>{{ review.message }}</p>
                     </div>
-                    <div class="swiper-slide box">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="{% static 'images/pic-2.jpeg' %}" alt="pic1">
-                            <div class="user-info">
-                                <h3>Ms. Taylor Swift</h3>
-                                <span>happy clients</span>
-                            </div>
-                        </div>
-                        <p>Kudos to the team for turning our vision into reality! The attention to detail and professionalism exceeded our expectations, making our corporate event.</p>
-                    </div>
-                    <div class="swiper-slide box">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="{% static 'images/pic-3.jpeg' %}" alt="pic1">
-                            <div class="user-info">
-                                <h3>Ms. Selena Gomez</h3>
-                                <span>happy clients</span>
-                            </div>
-                        </div>
-                        <p>Outstanding event planning! From start to finish, the team demonstrated flexibility, creativity, and precision, ensuring our special day was everything we dreamed of.</p>
-                    </div>
-                    <div class="swiper-slide box">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="{% static 'images/pic-4.jpeg' %}" alt="pic1">
-                            <div class="user-info">
-                                <h3>Ms. kendall jenner</h3>
-                                <span>happy clients</span>
-                            </div>
-                        </div>
-                        <p>Impeccable organization and a keen eye for aesthetics! The event flowed seamlessly, and the unique touches added a touch of magic that left our guests raving.</p>
-                    </div>
+                {% endfor %}
                 </div>
             </div>
         </section>
@@ -468,6 +329,6 @@
     {% endblock content %}
         <script
             src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-        <script src="{% static 'script.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
     </body>
 </html>

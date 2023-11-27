@@ -18,3 +18,14 @@ class SlideModel(models.Model):
 
     def __str__(self):
         return f'Slide {self.id}'
+
+
+class Review(models.Model):
+    image = models.ImageField(upload_to='review/')
+    name = models.CharField(max_length=255)
+    rating = models.CharField(max_length=255)
+    message = models.TextField()
+
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='gallery/')

@@ -1,14 +1,16 @@
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.views import View
-from .models import ContactMessage, SlideModel
+from .models import ContactMessage, SlideModel, Review, Gallery
 
 
 # Create your views here.
 class Home(View):
     def get(self, request):
         slides = SlideModel.objects.all()
-        return render(request, 'base.html', {'slides': slides})
+        reviews = Review.objects.all()
+        Galleries = Gallery.objects.all()
+        return render(request, 'base.html', {'slides': slides, 'reviews': reviews, 'Galleries': Galleries})
 
     def post(self, request):
         name = request.POST.get('name')
