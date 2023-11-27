@@ -1,5 +1,5 @@
 from django.core.mail import send_mail
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import ContactMessage, SlideModel, Review, Gallery
 
@@ -32,3 +32,24 @@ class Home(View):
         recipient_list = ['lokeshjain2806@gmail.com']
         send_mail(subject, message, from_email, recipient_list)
         return render(request, 'base.html')
+
+
+def checkout(request):
+    return render(request, 'check_out.html')
+
+
+def checkout2(request):
+    return render(request, 'checkout2.html')
+
+
+def checkout3(request):
+    return render(request, 'checkout3.html')
+
+
+def checkout4(request):
+    return render(request, 'checkout4.html')
+
+
+def paymentdone(request):
+    return redirect('Home')
+

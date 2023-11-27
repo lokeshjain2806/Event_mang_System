@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Checkout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap');
+
+
+:root{
+    --main-color: #eb2632;
+}
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #444;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+body{
+    background: #222;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    background: #666;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover{
+    background: var(--main-color);
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 10000;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 9%;
+}
+
+.header .logo{
+    font-weight:bolder;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.header .logo span{
+    color: var(--main-color);
+}
+
+.fa-solid{
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.home{
+    display: flex;
+}
+.home .content{
+    text-align: left;
+    padding-top: 5rem;
+    max-width: 70rem;
+    text-align: center;
+    padding-top: 13rem;
+}
+
+.home .content h3{
+    color: #fff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+
+.home .content h3 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.home .content p{
+    color: #fff;
+    margin-bottom: 8rem;
+    font-size: 2rem;
+    width: 70rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.home .content h3{
+    color: var(--main-color);
+}
+
+.home .home-slider .swiper-slide{
+    overflow: hidden;
+    border-radius: .5rem;
+    height: 50rem;
+    width: 35rem;
+    margin-left: 13rem;
+    margin-top: 13rem;
+}
+
+.home .home-slider .swiper-slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.footer{
+    background: #111;
+    margin-top: 5rem;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #eee;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color: var(--main-color);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 1.5rem;
+    color: #fff;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: 1rem solid #222;
+    color: #fff;
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.footer .credit span{
+    color: var(--main-color);
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'Home' %}" class="logo"><span>e</span>vento</a>
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Concert<span> function</span></h3>
+            <p>We're experts at planning fantastic concert parties with our event management system. We handle every little thing to make sure the event is amazing! We can handle everything, from locating the ideal location to erecting a fantastic stage and sound system. Our crew collaborates closely with the organisers and artists to produce a flawless, excellent event. We make sure everything is at the highest calibre since we recognise how important the proper atmosphere and energy are at a concert. Our goal is to plan concerts that people will talk about, regardless of the size of the event. You can trust us to handle your concert; we're here to make it unforgettable!</p>
+            <h3>Starting at $650.99</h3>
+            <a href="#footer" class="btn">Book Now</a>
+        </div>
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static 'images/concert.jpeg' %}" alt="slides"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>branches</h3>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> mumbai</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Delhi</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> California</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Washington</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> georgia</a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i> home</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> service</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> about</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> gallery</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> price</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> review</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> contact</a>
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
+                <a href="#"><i class="fas fa-phone"></i> +111-222-3333</a>
+                <a href="#"><i class="fas fa-envelope"></i> pratibha2001@gmail.com</a>
+                <a href="#"><i class="fas fa-envelope"></i> pachoury2000@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> mumbai, india - 400104</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"><i class="fa-brands fa-facebook"></i> facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> instagram</a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin</a>
+            </div>
+        </div>
+        <div class="credit"> created by <span>Ms. Pratibha Pachoury, Mr. Harsh Tomar, Mr. Naveen </span>  all rights reserved</div>
+    </section>
+</body>
+</html>
